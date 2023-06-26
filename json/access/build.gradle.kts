@@ -15,7 +15,7 @@ plugins { id("ch.qos.logback.contrib.java-conventions") }
 dependencies {
   api(libs.logback.access)
   api(project(":logback-json-core"))
-  implementation(libs.javax.servlet.api)
+  implementation(libs.jakarta.servlet.api)
   testImplementation(variantOf(libs.logback.access) { classifier("tests") })
 }
 

@@ -13,6 +13,7 @@ plugins {
   `java-library`
   `maven-publish`
   signing
+  id("org.owasp.dependencycheck")
 }
 
 repositories {
@@ -22,9 +23,10 @@ repositories {
 }
 
 dependencies {
-  testImplementation("org.mockito:mockito-core:2.0.44-beta")
-  testImplementation("junit:junit:4.8.2")
+  testImplementation("org.mockito:mockito-core:5.4.0")
   testImplementation("org.hamcrest:hamcrest-junit:2.0.0.0")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
 }
 
 interface MavenConfig {
@@ -44,6 +46,15 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 java {
   withJavadocJar()
   withSourcesJar()
+}
+
+dependencyCheck {
+  analyzers.assemblyEnabled = false
+  autoUpdate = true
+  cveValidForHours = 1
+  failBuildOnCVSS = 0f
+  format = "HTML"
+  suppressionFile = rootProject.file("owasp-suppressions.xml").path
 }
 
 publishing {
@@ -126,9 +137,7 @@ publishing {
   }
 }
 
-signing {
-  sign(publishing.publications.getByName("maven"))
-}
+signing { sign(publishing.publications.getByName("maven")) }
 
 tasks.withType<JavaCompile> { options.encoding = "UTF-8" }
 

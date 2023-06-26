@@ -17,3 +17,7 @@ plugins {
 repositories {
   gradlePluginPortal()
 }
+
+dependencies {
+  implementation("org.owasp:dependency-check-gradle:8.3.1")
+}

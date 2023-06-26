@@ -34,15 +34,15 @@ project(":logback-json-core").projectDir = file("json/core")
 dependencyResolutionManagement {
   versionCatalogs {
     create("libs") {
-      version("logback", "1.1.8")
-      version("jackson", "2.8.5")
-      version("javax", "2.5")
+      version("logback", "1.4.8")
+      version("jackson", "2.15.2")
+      version("jakarta", "6.0.0")
 
       library("logback-access", "ch.qos.logback", "logback-access").versionRef("logback")
       library("logback-classic", "ch.qos.logback", "logback-classic").versionRef("logback")
       library("logback-core", "ch.qos.logback", "logback-core").versionRef("logback")
       library("jackson", "com.fasterxml.jackson.core", "jackson-databind").versionRef("jackson")
-      library("javax-servlet-api", "javax.servlet", "servlet-api").versionRef("javax")
+      library("jakarta-servlet-api", "jakarta.servlet", "jakarta.servlet-api").versionRef("jakarta")
     }
   }
 }
