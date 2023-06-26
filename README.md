@@ -7,7 +7,7 @@ https://github.com/qos-ch/logback-contrib/wiki
 Run the following command to build:
 
 ```
-mvn clean install
+./gradlew clean publishToMavenLocal
 ```
 
 #### License

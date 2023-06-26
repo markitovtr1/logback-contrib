@@ -4,7 +4,9 @@
 *.iws
 .classpath
 .externalToolBuilders
+.gradle
 .project
 .settings
+build
 target
 out

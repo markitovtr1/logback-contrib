@@ -116,7 +116,7 @@ public class JsonLayoutTest {
 
         assertTimestamp(log);
         assertThat(log, containsString(String.format("%s=%s", JsonLayout.LEVEL_ATTR_NAME, Level.INFO)));
-        assertThat(log, containsString(String.format("%s=%s", JsonLayout.THREAD_ATTR_NAME, "main")));
+        assertThat(log, containsString(String.format("%s=%s", JsonLayout.THREAD_ATTR_NAME, Thread.currentThread().getName())));
         assertThat(log, containsString(String.format("%s=%s", JsonLayout.LOGGER_ATTR_NAME, loggerName)));
         assertThat(log, containsString(String.format("%s=%s", JsonLayout.FORMATTED_MESSAGE_ATTR_NAME, message)));
 
