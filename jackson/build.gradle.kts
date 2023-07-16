@@ -10,7 +10,7 @@
  * under the terms of the GNU Lesser General Public License version 2.1
  * as published by the Free Software Foundation.
  */
-plugins { id("ch.qos.logback.contrib.java-conventions") }
+plugins { id("br.com.crazycrowd.logback.contrib.java-conventions") }
 
 dependencies {
   api(project(":logback-json-core"))

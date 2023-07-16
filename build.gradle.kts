@@ -18,6 +18,9 @@ nexusPublishing {
   repositories.sonatype {
     nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
     snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+    stagingProfileId.set("26565895bc0a19")
+    username.set(property("sonatypeUsername").toString())
+    password.set(property("sonatypePassword").toString())
   }
 }
 

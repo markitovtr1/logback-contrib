@@ -35,10 +35,6 @@ interface MavenConfig {
 
 val mavenConfig = extensions.create<MavenConfig>("mavenConfig")
 
-group = "ch.qos.logback.contrib"
-
-version = "0.1.6-SNAPSHOT"
-
 val projectDescription = description
 
 java.sourceCompatibility = JavaVersion.VERSION_1_8
